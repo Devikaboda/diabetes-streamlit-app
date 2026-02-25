@@ -3,8 +3,7 @@ import streamlit as st
 import joblib
 import numpy as np
 
-model = joblib.load("trained_model.sav")
-
+model = joblib.load("trained_model.joblib")
 st.title("🩺 Diabetes Prediction App")
 st.write("Please enter the following details:")
 
