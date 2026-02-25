@@ -1,10 +1,9 @@
 
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
 
-# Load trained model
-model = pickle.load(open("trained_model.sav", "rb"))
+model = joblib.load("trained_model.sav")
 
 st.title("🩺 Diabetes Prediction App")
 st.write("Please enter the following details:")
