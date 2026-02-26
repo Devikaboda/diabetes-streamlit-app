@@ -1,6 +1,7 @@
 
-import joblib
 import streamlit as st
+import numpy as np
+import joblib
 
 st.title("Diabetes Prediction App")
 
@@ -17,8 +18,8 @@ glucose = st.number_input("Glucose Level", min_value=0)
 bp = st.number_input("Blood Pressure", min_value=0)
 skin = st.number_input("Skin Thickness", min_value=0)
 insulin = st.number_input("Insulin Level", min_value=0)
-bmi = st.number_input("BMI", min_value=0.0)
-dpf = st.number_input("Diabetes Pedigree Function", min_value=0.0)
+bmi = st.number_input("BMI", min_value=0.0, format="%.2f")
+dpf = st.number_input("Diabetes Pedigree Function", min_value=0.0, format="%.3f")
 age = st.number_input("Age", min_value=0)
 
 if st.button("Predict"):
@@ -26,6 +27,6 @@ if st.button("Predict"):
     prediction = model.predict(input_data)
 
     if prediction[0] == 1:
-        st.error("⚠️ The person is likely to have Diabetes")
+        st.error("The person is diabetic")
     else:
-        st.success("✅ The person is not likely to have Diabetes")
+        st.success("The person is not diabetic")
