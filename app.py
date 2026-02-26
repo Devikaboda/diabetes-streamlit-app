@@ -6,7 +6,7 @@ import joblib
 st.title("Diabetes Prediction App")
 
 try:
-    model = joblib.load("trained_model.joblib")
+    model = joblib.load("diabetes_pipeline.joblib")
     st.success("Model loaded successfully")
 except Exception as e:
     st.error(f"Error loading model: {e}")
